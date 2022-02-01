@@ -2,15 +2,27 @@
 
 words = []
 
+
 # Reads in the dict
 def read():
-	with open('/usr/share/dict/words', 'r') as r:
-		words = r.read().splitlines()
-
-	for i in range(10):
+	with open('/usr/share/dict/words', 'r') as f:
+		words = f.read().splitlines()
+	
+	listlength = len(words)
+	
+	for i in range(listlength - 10, listlength):
 		print(words[i])
 
 # This function reads in words and only prints words that start with 'pyt'
 def pyt(words):
-	x = words.startswith("pyt")
-	print(x)
+	with open('/usr/share/dict/words', 'r') as f:
+		words = f.read().splitlines()
+
+	listlength = len(words)
+
+	for i in range(listlength): 	
+		if(words[i].startswith("pyt")):
+			print(words[i])
+
+read()
+pyt(words)
