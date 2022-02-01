@@ -3,11 +3,10 @@
 nums = [33, 2, 7, 9, 4, 100, 254, 1329, 96, 24]
 
 def even_odd(nums):
-	for i in range(len(even_odd)):
+	for i in range(len(nums)):
 		if nums % 2 == 1:
 			print(nums[i], " :odd")
 		else:
 			print(nums[i], " :even")
-
-:
+even_odd(nums) 
 
