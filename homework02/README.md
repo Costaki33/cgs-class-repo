@@ -16,6 +16,7 @@ Below are descriptions of each of the files in this folder:
 
     dataSet.json: 
         dataSet.json is a file that is created everytime generator.py is run. It is where the dictionary is stored and can be called        onto.
+
     generator.py:
         generator.py creates random latitude and longitude values between a set of predeterminded bounds, as well as randomly selects a type of meteorite crator, which is stored under an id that can be called up through a dictionary.
 
@@ -24,6 +25,8 @@ Below are descriptions of each of the files in this folder:
 
 
 ////////////////////////////////////////////////////////////////////////
+
+
 INSTRUCTIONS TO RUN AND UNDERSTAND THE CODE:
 
 To run the code, please type 'python3 generator.py', followed by 'python3 readin_generator.py'. You will see no output by generator.py but will see an output with readin_generator.py. 
