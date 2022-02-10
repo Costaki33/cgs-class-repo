@@ -24,22 +24,27 @@ INIT_LON = 82.0
 
 
 sites_list = ml_data["sites"]
+counter = 0
+total_time = 0.0
+
 
 for i in sites_list:
-    dist = calc_gcd(INIT_LAT, INIT_LON, sites_list["latitude"], sites_list["longitude"])
+    dist = calc_gcd(INIT_LAT, INIT_LON, i["latitude"], i["longitude"])
         
     travel_time = dist / ROB_SPEED
 
-    if site_list["compositon"] == ["stony"]:
+    if i["composition"] == "stony":
         timeAtMeteorite = 1 
-    elif site_list["composition"] == ["iron"]:
+    elif i["composition"] == "iron":
         timeAtMeteorite = 2 
-    elif site_list["composition"] == ["stony-iron"]:
+    elif i["composition"] == "stony-iron":
         timeAtMeteorite = 3 
 
-    print('leg ', site_list["site_id"])
+    print('leg ', i["site_id"], ', time to travel = ', travel_time, 'hr, time to sample = ', timeAtMeteorite, "hr")
+    counter += 1
+    total_time += travel_time 
 
-
+print('number of legs = ', counter, 'total time elapsed = ', total_time, 'hr')  
 
 
 
