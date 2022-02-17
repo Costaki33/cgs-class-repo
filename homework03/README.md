@@ -30,12 +30,16 @@ You will see a long list of information similar to that of:
 
 1)
     Average turbidity based on most recent five measurements = 1.1992 NTU
+
     Warning: Turbidity is above threshold for safe use
+
     Minimum time required to return below a safe threshold = 8.99 hours 
 
 2)
     Average turbidity based on most recent five measurements = 0.9852 NTU
+
     Info: Turbidity is below threshold for safe use
+
     Minimum time required to return below a safe threshold = 0 hours
 
 The first line outputs the 5 most recent water measurements taken and their turbidity value. A value between 0.2 and 1.6 is to be expected (in NTU units). If the value is <1, the water is safe. If the value is 1<, it is unsafe to use. The second line indicates whether the water is safe to use or not. If the water is deemed not safe to use, like that in example 1), a third line is ouputted, which indicates how long it will for it to be safe. 
