@@ -6,7 +6,7 @@ Homework 03 calls back onto the operation a robotic vechile conducted on Mars, w
 ## Part 1: Reading in the data set
 For reading in the data set, in command-line, type: "curl https://raw.githubusercontent.com/wjallen/turbidity/main/turbidity_data.json --ouput my.filename"
 
-This will download the data set under the name "my.filename" that is used for the script. In my script, this file is referred to as: "turb_data" in the main()
+This will download the data set under the name "my.filename" that is used for the script. In my script, this file is referred to as: "turbidity_data" in this homework03 directory
 
 
 ## Part 2: Calculating the turbidity of the water samples & minimum time to return to a safe threshold
