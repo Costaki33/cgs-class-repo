@@ -101,7 +101,7 @@ To run ```test_ml_data_analysis.py``` and verify functionality of the program, r
 ```sh +
 ...                                                                                     [100%]
 
-================================================== 3 passed in 0.04s ===================================================
+================================================== 5 passed in 0.04s ===================================================
 ```
 ## Final Note: Tester Input
 Make sure that the new data set being used against the containerized code resembles that of the ```Meteorite_Landings.json``` data set, where its structure resembles a *dictionary* of one key whose values is a list of dictionaries. 
