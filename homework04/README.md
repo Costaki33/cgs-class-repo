@@ -1,4 +1,4 @@
-# Meteorite Landings Data Analysis 
+# Homework 04 - Meteorite Landings Data Analysis 
 
 This homework assignment compiled a project we had been working in class, which entailed an analyses on the data a rover took fromvarius meteorite landing sites, such as the average mass of meteorites, their location, and the different types of meteorites. 
 
@@ -8,7 +8,7 @@ This homework04 folder includes the following:
 - A tester for the summary script: ```test_ml_data_analysis.py```
 - A ```Dockerfile``` to run the programs in a container with the required/used base image & dependencies
 
-## Overall Scripts
+## Reviewing the Scripts
 
 ### Dockerfile
 To run the following homework04 scripts in the environment that has the base images/dependencies/install processes/environment variables used when developing the scripts, we will run these scripts in the created ```ml_data_analysis.py``` Docker container.
@@ -81,7 +81,7 @@ The EH4 class was found 2 times
 The Acapulcoite class was found 1 times
 ...
 ```
-#### Running the Code inside the Container with Unique Data Set
+#### Running the Code inside the Container with a Unique Data Set (Extra Data Set Provided)
 Perhaps you would like to run the analysis script against a unique data set besides the example data set provided in the container, you can add your own data set into the pulled container, 
 
 First, exit the container with the ```exit``` command and then run the following command in the repository with your Dockerfile:
@@ -92,7 +92,7 @@ This mounts the contents of *your* current directory to a directory *in the* con
 
 A data set has been provided at this [link](https://raw.githubusercontent.com/wjallen/coe332-sample-data/main/ML_Data_Sample.json) where you can copy it into a file of your own and be utilized. 
 
-#### Running the Containerized Tester
+#### Running the Tester in the Container
 To run ```test_ml_data_analysis.py``` and verify functionality of the program, run the container with the above instructions, move to the code repo and run the following command in a terminal shell:
 ```sh
 [root@9a69274382 code]# pytest test_ml_data_analysis.py
@@ -103,8 +103,8 @@ To run ```test_ml_data_analysis.py``` and verify functionality of the program, r
 
 ================================================== 3 passed in 0.04s ===================================================
 ```
-## Expected Inputs
-Be sure that the data being used against the containerized code resembles ```Meteorite_Landings.json``` data set, where its structure resembles a *dictionary* of one key whose values is a list of dictionaries. 
+## Final Note: Tester Input
+Make sure that the new data set being used against the containerized code resembles that of the ```Meteorite_Landings.json``` data set, where its structure resembles a *dictionary* of one key whose values is a list of dictionaries. 
 In addition, make sure that the key strings for mass, latitude, longitude, and class are respectively labeled as ```'mass (g)'```, ```'reclat'```, ```'reclong'```, and ```'recclass'```, as they are the key names the tester and the function are looking for. 
 Expected input may look as the following based on your input:
 ```
