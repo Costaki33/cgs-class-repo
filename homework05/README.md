@@ -54,11 +54,11 @@ Run the following commands in a terminal shell (EX. Powershell, CMD, etc.):
       - It is important to note, back at step 4, to recall the string ID, you will copy it into the <redis container ID> space 
       - However, if you forgot your redis container ID, no worries! You can run `docker ps -a | grep <redis container name>`
            - For Example:
-               ```
+          ```
                [costaki@isp02 homework05]$ docker ps -a | grep costaki-redis
         5f7d7e2d1dc   redis:6                                   "docker-entrypoint.s…"   1 hour ago    Up 2 hours                0.0.0.0:6438->6379/tcp, :::6438->6379/tcp   costaki-redis
                [costaki@isp02 homework05]$ docker inspect bb665e716631 | grep IPAddress
-               ```
+          ```
       - From the output sequence, we can determine that the IP Address that connects the Flask & Redis containers is: `172.17.0.23`
 
 7. Open the `app.py` using the `VIM` service:
