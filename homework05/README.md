@@ -42,28 +42,28 @@ Run the following commands in a terminal shell (EX. Powershell, CMD, etc.):
       - The long string of numbers and letters is the specific ID of this specific Redis container
 
   5. Start the Flask container
-    - `docker run --name "meteorite-data-cgs" -d -p <your flask port number>:5000 costaki33/meteorite-data-cgs:1.0`
-    - For Example, your command should look like this:
+      - `docker run --name "meteorite-data-cgs" -d -p <your flask port number>:5000 costaki33/meteorite-data-cgs:1.0`
+      - For Example, your command should look like this:
         ```
         [costkai@isp02 homework05]$ docker run --name "meteorite-data-cgs" -d -p 5031:5000 costaki33/meteorite-data-cgs:1.0
         ```
-    - A string will pop up again, this being the ID of the Flask container 
+      - A string will pop up again, this being the ID of the Flask container 
 
 6. Find the specific IP Address that connects the two containers (Flask & Redis)
-    - `docker inspect <redis container id> | grep IPAddress`
-    - It is important to note, back at step 4, to recall the string ID, you will copy it into the <redis container ID> space 
-    - However, if you forgot your redis container ID, no worries! You can run `docker ps -a | grep <redis container name>`
+      - `docker inspect <redis container id> | grep IPAddress`
+      - It is important to note, back at step 4, to recall the string ID, you will copy it into the <redis container ID> space 
+      - However, if you forgot your redis container ID, no worries! You can run `docker ps -a | grep <redis container name>`
            - For Example:
                ```
                [costaki@isp02 homework05]$ docker ps -a | grep costaki-redis
         5f7d7e2d1dc   redis:6                                   "docker-entrypoint.s…"   1 hour ago    Up 2 hours                0.0.0.0:6438->6379/tcp, :::6438->6379/tcp   costaki-redis
                [costaki@isp02 homework05]$ docker inspect bb665e716631 | grep IPAddress
                ```
-    - From the output sequence, we can determine that the IP Address that connects the Flask & Redis containers is: `172.17.0.23`
+      - From the output sequence, we can determine that the IP Address that connects the Flask & Redis containers is: `172.17.0.23`
 
 7. Open the `app.py` using the `VIM` service:
-    - `vim app.py` to navigate into the Python script
-    - Set the `host` variable to the newly discovered IP Address as follows:
+      - `vim app.py` to navigate into the Python script
+      - Set the `host` variable to the newly discovered IP Address as follows:
         ```
         ...
         def call_redis_client()
