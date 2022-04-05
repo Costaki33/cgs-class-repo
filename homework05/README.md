@@ -22,22 +22,24 @@ Run the following commands in a terminal shell (EX. Powershell, CMD, etc.):
     - The following should be on your local machine:
         ```
         [costaki@isp02 homework05]$ ls
-        app.py  Dockerfile  Makefile  README.md startCriteria.txt
+        app.py  Dockerfile  README.md 
         ```
   2. Download the Meteorite Landings Dataset:
-    - `curl https://raw.githubusercontent.com/wjallen/coe332-sample-data/main/ML_Data_Sample.json --output Meteorite_Landings.json`
+
+      - `curl https://raw.githubusercontent.com/wjallen/coe332-sample-data/main/ML_Data_Sample.json --output Meteorite_Landings.json`
   3. Now, build the image
-    - `docker build -t <your username>/meteorite-data-cgs:1.0 .` 
-    - Note: replace `<your username>` with your docker username
+
+      - `docker build -t <your username>/meteorite-data-cgs:1.0 .` 
+      - Note: replace `<your username>` with your docker username
 
   4. Start the Redis container
-    - `docker run -d -p <your redis port number>:6379 -v $(pwd)/data:/data:rw --name=<container name>-redis redis:6 --save 1 1`
-    - For instance, it shoud look like this:
+      - `docker run -d -p <your redis port number>:6379 -v $(pwd)/data:/data:rw --name=<container name>-redis redis:6 --save 1 1`
+      - For instance, it shoud look like this:
         ```
         [costaki@isp02 homework05]$ docker run -d -p 6431:6379 -v $(pwd)/data:/data:rw --name=costaki-redis redis:6 --save 1 1
         5f7d7e2f1dc68feafe0455e0c49566e84299303e8a2bc510e3f2c6c1d5f8c9f6
         ```
-    - The long string of numbers and letters is the specific ID of this specific Redis container
+      - The long string of numbers and letters is the specific ID of this specific Redis container
 
   5. Start the Flask container
     - `docker run --name "meteorite-data-cgs" -d -p <your flask port number>:5000 costaki33/meteorite-data-cgs:1.0`
