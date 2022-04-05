@@ -1,13 +1,16 @@
-FROM python:3.9
+FROM centos:7.9.2009
+
+RUN yum update -y && \
+    yum install -y python3
+
+RUN pip3 install --user Flask==2.0.3
+RUN pip3 install --user redis
+
 
 RUN mkdir /app
 WORKDIR /app
+COPY Meteorite_Landings.json /app
+COPY app.py /app
 
-COPY startCriteria.txt /app/startCriteria.txt
-
-RUN pip3 install -r /app/startCriteria.txt 
-COPY . /app
-
-ENTRYPOINT ["python"]
+ENTRYPOINT ["python3"]
 CMD ["app.py"]
-

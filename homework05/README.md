@@ -54,8 +54,8 @@ Run the following commands in a terminal shell (EX. Powershell, CMD, etc.):
            - For Example:
                ```
                [costaki@isp02 homework05]$ docker ps -a | grep costaki-redis
-        5f7d7e2d1dc   redis:6                                   "docker-entrypoint.s…"   1 hour ago    Up 2 hours                0.0.0.0:6438->6379/tcp, :::6438->6379/tcp   ianwood-redis
-        [costaki@is-+-p02 homework05]$ docker inspect bb665e716631 | grep IPAddress
+        5f7d7e2d1dc   redis:6                                   "docker-entrypoint.s…"   1 hour ago    Up 2 hours                0.0.0.0:6438->6379/tcp, :::6438->6379/tcp   costaki-redis
+               [costaki@isp02 homework05]$ docker inspect bb665e716631 | grep IPAddress
                ```
     - From the output sequence, we can determine that the IP Address that connects the Flask & Redis containers is: `172.17.0.23`
 
@@ -76,66 +76,65 @@ There are three types of specified commands the user can utilize to interact wit
 
 
   1. This POST command loads the data into the Redis container
-      `curl localhost:<your flask port number>/data -X POST` to load the data into the Redis container
+      `curl -X POST localhost:<your flask port number>/data` to load the data into the Redis container
       - For Example:
       ```
-      [costaki@isp02 homework05]$ curl localhost:5031/data -X POST
+      [costaki@isp02 homework05]$ curl -X POST localhost:5031/data
         [INFO]: Successfully uploaded the dataset
       ```
       
   2. This GET command outputs all the data in the Meteorite Landings Dataset
-      `curl localhost:<your flask port number>/data -X GET` to output all of the data in the dataset
+      `curl -X GET localhost:<your flask port number>/data` to output all of the data in the dataset
       - For Example:
-      ```
-      [costaki@isp02 homework05]$ curl localhost:5031/data -X GET
+     ```
+      [costaki@isp02 homework05]$ curl -X GET localhost:5031/data
       [
-        {
-          "GeoLocation": "(-33.16667, -64.95)", 
-          "id": "10005", 
-          "mass (g)": "780", 
-          "name": "Mitchell", 
-          "recclass": "L6", 
-          "reclat": "-33.16667", 
-          "reclong": "-64.95"
-        },
-        ...
-        {
-          "GeoLocation": "(51.78333, -1.78333)", 
-          "id": "10024", 
-          "mass (g)": "700", 
-          "name": "Bautista", 
-          "recclass": "LL5", 
-          "reclat": "51.78333", 
-          "reclong": "-1.78333"
-        }
+          {
+            "GeoLocation": "(26.4043, -78.3046)",
+            "id": "10111",
+            "mass (g)": "496",
+            "name": "Lisa",
+            "recclass": "H6",
+            "reclat": "26.4043",
+            "reclong": "-78.3046"
+           },
+          {
+            "GeoLocation": "(-86.2178, 12.3718)",
+            "id": "10064",
+            "mass (g)": "4605",
+            "name": "Hilma",
+            "recclass": "H4",
+            "reclat": "-86.2178",
+            "reclong": "12.3718"
+          }
       ]
       ```
       - From the example output above, we can see all the entries in the dataset in JSON format
-  3. `localhost:<your flask port number>/data?start=<starting index> -X GET` to query only a subset of the data in the dataset, 
-      where <starting index> is the index of the data entry you would like to start at.
-      - Example:
+ 
+   3. This GET command queries a specific index in the data set
+        `localhost:<your flask port number>/data?start=<starting index> -X GET`
+      - For Example:
       ```
-      [ianwood@isp02 homework05]$ curl localhost:5038/data?start=28 -X GET
+      [costaki@isp02 homework05]$ curl -X GET localhost:5031/data?start=21 -X GET
       [
-        {
-          "GeoLocation": "(-31.6, -65.23333)", 
-          "id": "10009", 
-          "mass (g)": "1620", 
-          "name": "Hachey", 
-          "recclass": "L6", 
-          "reclat": "-31.6", 
-          "reclong": "-65.23333"
-        }, 
-        {
-          "GeoLocation": "(51.78333, -1.78333)", 
-          "id": "10024", 
-          "mass (g)": "700", 
-          "name": "Bautista", 
-          "recclass": "LL5", 
-          "reclat": "51.78333", 
-          "reclong": "-1.78333"
-        }
+          {
+           "GeoLocation": "(26.4043, -78.3046)",
+           "id": "10111",
+           "mass (g)": "496",
+           "name": "Lisa",
+           "recclass": "H6",
+           "reclat": "26.4043",
+           "reclong": "-78.3046"
+          },
+         {
+           "GeoLocation": "(-86.2178, 12.3718)",
+           "id": "10064",
+           "mass (g)": "4605",
+           "name": "Hilma",
+           "recclass": "H4",
+           "reclat": "-86.2178",
+           "reclong": "12.3718"
+          } 
       ]
       ```
-      - From the example output above, we can see the data entries in the dataset starting from index 28 to the end of the dataset.
-
+Happy data hunting!

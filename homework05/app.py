@@ -12,7 +12,7 @@ def call_redis_client():
     This function returns the network call where the Flask & Redis containers communicate from 
     
     '''
-    return redis.Redis(host = '172.17.0.14', port = 6379, db = 0)
+    return redis.Redis(host = '172.17.0.13', port = 6379, db = 0)
 
 def read_data_from_file() -> List[dict]:
 
