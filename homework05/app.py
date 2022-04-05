@@ -12,7 +12,7 @@ def call_redis_client():
     This function returns the network call where the Flask & Redis containers communicate from 
     
     '''
-    return redis.Redis(host = '172.17.0.23', port = 6379, db = 0)
+    return redis.Redis(host = '172.17.0.14', port = 6379, db = 0)
 
 def read_data_from_file() -> List[dict]:
 
@@ -35,17 +35,18 @@ def data():
 
     '''
 
-    rd = call_redis_client()
+    red = call_redis_client()
+
     if request.method == 'GET':
         dataset = []
         start = request.args.get('start', 0)
         
         try:
             start = int(start)
-            for key in rd.scan_iter():
-                d = rd.hgetall(key)
-                d = {key.decode('utf-8'): d[key].decode('utf-8') for key in d.keys()}
-                data.append(d)
+            for key in red.scan_iter():
+                s = red.hgetall(key)
+                s = {key.decode('utf-8'): s[key].decode('utf-8') for key in s.keys()}
+                dataset.append(s)
         except ValueError:
             return '[INFO]: Invalid parameter, please make sure the starting parameter is an int\n'
         
@@ -54,12 +55,12 @@ def data():
     elif request.method == 'POST':
         dataset = read_data_from_file()
 
-        for d in dataset:
-            rd.hset(d['id'], mapping = d)
+        for v in dataset:
+            red.hset(v['id'], mapping = v)
 
         return '[INFO]: Successfully uploaded the dataset \n'    
 
     return '[ERROR]: Unknown request, try again\n'        
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug = True, host = '0.0.0.0')
