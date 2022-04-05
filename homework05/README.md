@@ -1,4 +1,4 @@
-#Homework 05 - Redis Application with Meteorite Landings Dataset
+# Homework 05 - Redis Application with Meteorite Landings Dataset
 
 ## Homework 05 Objectives
 * Creating a database using Redis to store the meteorite landings data that would save a backup of the database every second 
