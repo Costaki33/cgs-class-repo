@@ -1,0 +1,32 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: costaki-test-redis-deployment
+  labels:
+    username: costaki
+    env: test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      username: costaki
+      env: test
+      app: costaki-test-redis
+  template:
+    metadata:
+      labels:
+        username: costaki
+        env: test
+        app: costaki-test-redis
+    spec:
+      containers:
+        - name: redis
+          image: redis:5.0.0
+          volumeMounts:
+          - name: costaki-test-redis-volume
+            mountPath: "/data"
+      volumes:
+      - name: costaki-test-redis-volume
+        persistentVolumeClaim:
+          claimName: costaki-test-redis-pvc
