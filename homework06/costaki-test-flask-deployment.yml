@@ -1,0 +1,32 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: costaki-test-flask-deployment
+  labels:
+    username: costaki
+    env: test
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      username: costaki
+      env: test
+      app: costaki-test-flask
+  template:
+    metadata:
+      labels:
+        username: costaki
+        env: test
+        app: costaki-test-flask
+    spec:
+      containers:
+        - name: redisflask
+          imagePullPolicy: Always
+          image: costaki33/hw06:v1
+          env:
+          - name: FLASK_APP
+            value: "app.py"
+          ports:
+          - name: http
+            containerPort: 5031
