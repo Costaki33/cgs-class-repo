@@ -5,7 +5,7 @@ The ISS Positonal and Sighting Data Querier application provides a user a contai
 ## Understanding the Diagram
 
 The following diagram models the functionality of the ISS P.S Data Querier Project, detailing user actions & interactions to access specific information about the ISS they would like to examine:
-![Diagram](iss_query_diagram.pdf)
+![Diagram](iss_query_diagram.jpg)
 
 First, the user must create a running container of the Flask web server that will host the application. This complicated process was simplified with the ```Make all```  process/command. Utilizing a Makefile, all of the necesary dependencies and variables to run the application environemnt are created. 
 
