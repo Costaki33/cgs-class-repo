@@ -1,5 +1,5 @@
-## COE 332 - Intro to Software Engineering & Design
-# Constantinos Skevofilax Homeworks Repository
+# COE 332 - Intro to Software Engineering & Design
+## Constantinos Skevofilax Homeworks Repository
 
 Hello!
 
