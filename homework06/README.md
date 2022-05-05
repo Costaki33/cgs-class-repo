@@ -1,6 +1,9 @@
-# Kubernetes-Based (k8's) Deployment for Meteorite Landings Database Server Application 
+# Homework 06 - Kubernetes-Based (k8's) Deployment for Meteorite Landings Database Server Application 
+
+# Homework Description & Objectives
 This project used Kubernetes (k8s) to deploy a test environment that allows the user to interact with a Flask web application using a Redis database both to load and receive a meteorite dataset containing specific information about meteors sighted by the Meteorical Society. These meteorite features include: class, longitude, latitude, and mass (g). 
 
+# Scripts Overview
 The scripts for this project include:
 - ```Dockerfile```: This script downloads all the necessary dependencies and environment variables for the developed Flask application
 - ```app.py```: This script provides routes to both download and return the specified Meteorite Landings dataset
