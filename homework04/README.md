@@ -1,5 +1,6 @@
 # Homework 04 - Meteorite Landings Data Analysis 
 
+## Homework Senario & Objectives
 This homework assignment compiled a project we had been working in class, which entailed an analyses on the data a rover took fromvarius meteorite landing sites, such as the average mass of meteorites, their location, and the different types of meteorites. 
 
 This homework04 folder includes the following:
