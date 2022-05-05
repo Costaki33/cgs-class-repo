@@ -1,4 +1,6 @@
-# International Space Station (ISS) Positional and Sighting Data Querier
+# Homework 07 - International Space Station (ISS) Positional and Sighting Data Querier Software Diagram
+
+## Homework Description & Objectives
 
 The ISS Positonal and Sighting Data Querier application provides a user a containerized web application that they can user to query and access specific information ISS sighting and positional data about the spacecraft from the dataset provided by the Johnson Space Center. Those who have even a slight interest in space are able to expand and their develop their love of the ISS by having the containerize accessability to search and specify through large amounts of data such as positon, velocity, and various sightings in their area through this easy-to-use Flask-based web application.
 
