@@ -36,20 +36,20 @@ This information is outputted on the command-line
 ## Running and interpreting the script
 
 
-To run this script, you must first run the "curl" command noted above to download the data set which this script currently uses. 
+To run this script, you must first run the `curl` command noted above to download the data set which this script currently uses. 
 
-Then type the command "python3 water_Safety.py", which will print out the conclusion for safety for each water sample taken. 
+Then type the command `python3 water_Safety.py`, which will print out the conclusion for safety for each water sample taken. 
 
 You will see a long list of information similar to that of:
 
-1)
+EX)
     Average turbidity based on most recent five measurements = 1.1992 NTU
 
     Warning: Turbidity is above threshold for safe use
 
     Minimum time required to return below a safe threshold = 8.99 hours 
 
-2)
+EX)
     Average turbidity based on most recent five measurements = 0.9852 NTU
 
     Info: Turbidity is below threshold for safe use
