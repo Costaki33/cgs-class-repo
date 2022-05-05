@@ -33,7 +33,7 @@ timeCalc() takes the turbidity value calculated previously and calculates the am
 This information is outputted on the command-line
 
 
-## Running and interpreting the script
+## Running and Interpreting the script
 
 
 To run this script, you must first run the `curl` command noted above to download the data set which this script currently uses. 
@@ -42,20 +42,22 @@ Then type the command `python3 water_Safety.py`, which will print out the conclu
 
 You will see a long list of information similar to that of:
 
-EX)
+```
     Average turbidity based on most recent five measurements = 1.1992 NTU
 
     Warning: Turbidity is above threshold for safe use
 
     Minimum time required to return below a safe threshold = 8.99 hours 
+```
 
-EX)
+```
     Average turbidity based on most recent five measurements = 0.9852 NTU
 
     Info: Turbidity is below threshold for safe use
 
     Minimum time required to return below a safe threshold = 0 hours
 
+```
 The first line outputs the 5 most recent water measurements taken and their turbidity value. A value between 0.2 and 1.6 is to be expected (in NTU units). If the value is <1, the water is safe. If the value is 1<, it is unsafe to use. The second line indicates whether the water is safe to use or not. If the water is deemed not safe to use, like that in example 1), a third line is ouputted, which indicates how long it will for it to be safe. 
 
 
