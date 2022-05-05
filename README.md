@@ -1,3 +1,6 @@
+## COE 332 - Intro to Software Engineering & Design
+# Constantinos Skevofilax Homeworks Repository
+
 Hello!
 
 This is my first README file that I am making for my COE332 class!
