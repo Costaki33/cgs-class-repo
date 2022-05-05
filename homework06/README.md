@@ -71,4 +71,8 @@ root@trunk-debug-deployment-6fd6c5886b-qsxz4:/# curl 10.106.22.192:5000/data
  }
 ]
 ```
+
+## Interpreting the Data
+As previously defined, you can identify the specific attributes of the a specific meteorite by itsname, id, class, mass (g), its latitude & longitude postion, and GeoLocation. 
+
 Now, you can retrieve your data! Happy data mining!
