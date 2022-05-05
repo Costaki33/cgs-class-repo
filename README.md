@@ -2,7 +2,7 @@
 ## Constantinos Skevofilax Homeworks Repository
 
 ## Folder File Organization
-Each homework assignment for COE 332 is organized into its own folder, appropriately named "homework()", with the () being the appropriate homework number. In each homework folder, there is a descriptive README.md, as well as various Python, Docker, Makefile, and .yml scripts. 
+Each homework assignment for COE 332 is organized into its own folder, appropriately named "homework_", with the "_" being the appropriate homework number. In each homework folder, there is a descriptive README.md, as well as various Python, Docker, Makefile, and .yml scripts. 
 
 ## Understanding the README Files
 Each of the README files provide a brief description of each homework section, which follows:
